@@ -1,17 +1,7 @@
-class Escola {
-    var nome:String? = null
-    var cidade:String? = null
-    var codigo:Int? = null
+class Escola (var nome:String, var cidade: String, var codigo: Int){
     var turmas = mutableListOf<Turma>()
 
-    fun cadastraEscola(nomec:String, cidadec:String, codigoc:Int):Escola {
-        nome = nomec
-        cidade = cidadec
-        codigo = codigoc
-        return this
-    }
-
     fun adicionaTurma(nomec:String, seriec:String){
-        turmas.add(Turma().cadastraTurma(nomec, seriec))
+        turmas.add(Turma(nomec, seriec))
     }
 }

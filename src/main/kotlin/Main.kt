@@ -46,7 +46,7 @@ fun main() {
                 val cidade = readln()
                 print("Digite o código da escola: ")
                 val codigo = readln().toInt()
-                escolas.add(Escola().cadastraEscola(nome, cidade, codigo))
+                escolas.add(Escola(nome, cidade, codigo))
                 println("Escola cadastrada!")
             }
             2 -> {
@@ -58,7 +58,7 @@ fun main() {
             4 -> {
                 print("Digite o código da escola: ")
                 var codigo = readln().toInt()
-                var e = Escola()
+                var e = Escola("", "", -1)
                 for (i in escolas) {
                     if (i.codigo == codigo) {
                         e = i
@@ -76,7 +76,8 @@ fun main() {
                             val nome = readln()
                             print("Digite a série da turma: ")
                             val serie = readln()
-                            escolas[codigo].turmas.add(Turma().cadastraTurma(nome, serie))
+                            //escolas[codigo].turmas.add(Turma().cadastraTurma(nome, serie))
+                            escolas[codigo].turmas.add(Turma(nome, serie))
                             println("Turma cadastrada!")
                         }
                         2 -> {
@@ -95,7 +96,7 @@ fun main() {
                                         for (i in escolas[codigo].turmas) {
                                             if (i.nome == turmaNome) {
                                                 n = escolas[codigo].turmas.indexOf(i)
-                                                escolas[codigo].turmas[n].professores.add(Professor().cadastraProf(nome, materia))
+                                                escolas[codigo].turmas[n].professores.add(Professor(nome, materia))
                                                 break
                                             }
                                         }
@@ -109,7 +110,7 @@ fun main() {
                                         for (i in escolas[codigo].turmas) {
                                             if (i.nome == turmaNome) {
                                                 n = escolas[codigo].turmas.indexOf(i)
-                                                escolas[codigo].turmas[n].alunos.add(Aluno().cadastraAluno(nome))
+                                                escolas[codigo].turmas[n].alunos.add(Aluno(nome))
                                                 break
                                             }
                                         }

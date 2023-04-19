@@ -1,12 +1,5 @@
-class Turma {
-    var nome:String? = null
-    var serie:String? = null
+class Turma (var nome:String, var serie:String){
     var professores = mutableListOf<Professor>()
     var alunos = mutableListOf<Aluno>()
 
-    fun cadastraTurma(nomec:String, seriec:String):Turma {
-        nome = nomec
-        serie = seriec
-        return this
-    }
 }
